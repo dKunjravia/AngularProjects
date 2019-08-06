@@ -12939,11 +12939,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dkunj\\Documents\\quiz\\quizbackend\\quizbackend\\quizbackend.csproj",
+      "projectUniqueName": "C:\\GitHubRepo\\AngularProjects\\quiz\\quizbackend\\quizbackend\\quizbackend.csproj",
       "projectName": "quizbackend",
-      "projectPath": "C:\\Users\\dkunj\\Documents\\quiz\\quizbackend\\quizbackend\\quizbackend.csproj",
+      "projectPath": "C:\\GitHubRepo\\AngularProjects\\quiz\\quizbackend\\quizbackend\\quizbackend.csproj",
       "packagesPath": "C:\\Users\\dkunj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dkunj\\Documents\\quiz\\quizbackend\\quizbackend\\obj\\",
+      "outputPath": "C:\\GitHubRepo\\AngularProjects\\quiz\\quizbackend\\quizbackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

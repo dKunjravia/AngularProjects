@@ -2,10 +2,6 @@
         <mat-card-content>
             <mat-list *ngFor="let question of questions">
                 <mat-list-item class="clickLink" (click)="api.selectQuestion(question)">{{question.text}}</mat-list-item>
-                <!-- <mat-list-item>{{question.correctAnswer}}</mat-list-item>
-                <mat-list-item>{{question.answer1}}</mat-list-item>
-                <mat-list-item>{{question.answer2}}</mat-list-item>
-                <mat-list-item>{{question.answer3}}</mat-list-item> -->
             </mat-list>>
         </mat-card-content>
         <mat-card-actions>

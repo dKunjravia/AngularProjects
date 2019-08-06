@@ -25,9 +25,18 @@ namespace quizbackend.Controllers
             return context.Questions;
         }
 
+        [HttpGet("{quizId}")]
+        public IEnumerable<Models.Question> Get([FromRoute] int quizId)
+        {
+            return context.Questions.Where(q => q.QuizID == quizId);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Models.Question question)
         {
+            if (context.Quiz.SingleOrDefault(q => q.ID == question.QuizID) == null)
+                return NotFound();
+
             context.Questions.Add(question);
             await context.SaveChangesAsync();
 
@@ -39,6 +48,9 @@ namespace quizbackend.Controllers
         {
             if (id != question.ID)
                 return BadRequest();
+
+            if (context.Quiz.SingleOrDefault(q => q.ID == question.QuizID) == null)
+                return NotFound();
 
             context.Entry(question).State = EntityState.Modified;
 
