@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule, MatExpansionModule, MatRadioModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router'
@@ -19,6 +19,8 @@ import { QuizComponent } from './quiz.component';
 import { QuizzesComponent } from './quizzes.component';
 import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
+import { PlayComponent } from './play.component';
+import { PlayQuizComponent } from './playQuiz.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -26,7 +28,9 @@ const routes = [
   { path: 'question/:quizId', component: QuestionComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'quiz', component: QuizComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'play', component: PlayComponent},
+  { path: 'playQuiz/:quizId', component: PlayQuizComponent}
 ]
 
 @NgModule({
@@ -39,7 +43,9 @@ const routes = [
     QuizComponent,
     QuizzesComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PlayComponent,
+    PlayQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,9 @@ const routes = [
     MatToolbarModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatRadioModule
   ],
   providers: [ApiService, AuthService, 
     {
