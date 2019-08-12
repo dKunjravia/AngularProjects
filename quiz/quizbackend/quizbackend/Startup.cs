@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using quizbackend.Models;
 
 namespace quizbackend
 {
@@ -31,7 +32,7 @@ namespace quizbackend
                 .AllowAnyHeader();
             }));
 
-            services.AddDbContext<QuizContext>(opt => opt.UseInMemoryDatabase("quiz"));
+            services.AddDbContext<QuizContext>(opt => opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=QuizDb;Trusted_Connection=True"));
             services.AddDbContext<UserDbContext>(opt => opt.UseInMemoryDatabase("user"));
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>();
