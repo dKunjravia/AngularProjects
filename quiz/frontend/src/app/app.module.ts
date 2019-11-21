@@ -1,7 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule, MatExpansionModule, MatRadioModule} from '@angular/material';
+import { 
+  MatButtonModule, 
+  MatInputModule, 
+  MatCardModule, 
+  MatListModule, 
+  MatToolbarModule, 
+  MatExpansionModule, 
+  MatRadioModule,
+  MatDialogModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +30,7 @@ import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { PlayComponent } from './play.component';
 import { PlayQuizComponent } from './playQuiz.component';
+import { FinishedComponent } from './finished.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -45,7 +55,8 @@ const routes = [
     RegisterComponent,
     LoginComponent,
     PlayComponent,
-    PlayQuizComponent
+    PlayQuizComponent,
+    FinishedComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +72,8 @@ const routes = [
     HttpClientModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ],
   providers: [ApiService, AuthService, 
     {
@@ -69,6 +81,7 @@ const routes = [
       useClass: AuthInterceptop,
       multi: true
     }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [FinishedComponent]
 })
 export class AppModule { }
