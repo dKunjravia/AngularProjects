@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template : '<quiz></quiz><quizzes></quizzes>'
+  selector : 'home',
+  templateUrl : './home.component.html'
 })
 
 export class HomeComponent {
